@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", "Big Shoulders Display";
+}
+
+
+
+:root {
+    --Brightorange: hsl(31, 77%, 52%);
+    --Darkcyan: hsl(184, 100%, 22%);
+    --VeryDarkCyan: hsl(179, 100%, 13%);
+
+    --TransparentWhite: hsla(0, 0%, 100%, 0.75);
+    --VeryLightGray: hsl(0, 0%, 95%);
+}
+
+body {
+    font-size: max(.8rem,.9375rem);
+    background: var(--VeryLightGray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+
+.layout {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin: 2.5rem 1.25rem;
+}
+
+
+
+article {
+    background: var(--Brightorange);
+    width: max(15rem,20rem);
+    height: 31.25rem;
+    color: var(--Brightorange);
+    position: relative;
+    display: grid;
+    grid-template-rows: 2fr  1fr 3fr 1.5fr;
+    padding: 0 2.5rem;
+
+}
+
+article:first-of-type {
+    border-top-left-radius: .625rem;
+    border-top-right-radius: .625rem;
+}
+
+article:last-of-type {
+
+    border-bottom-left-radius: .625rem;
+    border-bottom-right-radius: .625rem;
+
+}
+
+
+article:nth-of-type(2) {
+    background: var(--Darkcyan);
+    color: var(--Darkcyan)
+}
+
+article:nth-of-type(3) {
+    background: var(--VeryDarkCyan);
+    color: var(--VeryDarkCyan);
+}
+
+
+article > .name {
+    color: var(--VeryLightGray);
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display';
+    font-size: max(1.5rem,2rem);
+}
+
+article > .desc {
+    color: var(--TransparentWhite);
+}
+
+article > .learn-more {
+    color: currentColor;
+    border: none;
+    background: var(--VeryLightGray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max(8rem,9.375rem);
+    height: 3.125rem;
+    border-radius: 18.75rem;
+    -webkit-border-radius: 18.75rem;
+    -moz-border-radius: 18.75rem;
+    -ms-border-radius: 18.75rem;
+    -o-border-radius: 18.75rem;
+}
+
+
+article > .learn-more:hover {
+    cursor: pointer;
+    color: var(--VeryLightGray);
+    background: transparent;
+    border: 3px solid var(--VeryLightGray)
+}
+
+
+
+
+article::before {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    }
+
+
+
+article::before {
+    content: url(../images/icon-sedans.svg)
+}
+
+article:nth-of-type(2)::before {
+    content: url(../images/icon-suvs.svg);
+} 
+
+article:nth-of-type(3)::before {
+    content: url(../images/icon-luxury.svg);
+}
+
+
+@media screen and (min-width: 640px) {
+    .layout {
+        margin: 2.5rem auto;
+    }
+    article:first-of-type {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-top-left-radius: .625rem;
+        border-bottom-left-radius: .625rem;
+
+    }
+
+    article:nth-of-type(2) {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-top-right-radius: .625rem;
+        border-bottom-right-radius: .625rem;
+}
+
+
+    article:nth-of-type(3) {
+        border-bottom-left-radius: .625rem;
+        border-bottom-right-radius: .625rem;
+    }
+
+}
+
+@media screen and (min-width: 960px) {
+
+    article:nth-of-type(2) {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+
+    article:first-of-type {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-top-left-radius: .625rem;
+        border-bottom-left-radius: .625rem;
+    }
+
+    article:last-of-type {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-bottom-right-radius: .625rem;
+        border-top-right-radius: .625rem;
+    }
+}
